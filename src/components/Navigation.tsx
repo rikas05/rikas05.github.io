@@ -1,55 +1,75 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Brain, User } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
+
+const navItems = [
+  { href: '#home', label: 'Home' },
+  { href: '#about', label: 'About' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#contact', label: 'Contact' }
+];
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('#home');
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+
+      const sections = navItems.map(item => document.querySelector(item.href) as HTMLElement);
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        if (section && section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
+          setActiveSection(`#${section.id}`);
+          break;
+        }
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#contact', label: 'Contact' }
-  ];
-
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const top = element.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
     setIsOpen(false);
   };
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-slate-900/95 backdrop-blur-md border-b border-slate-800' : 'bg-transparent'
+      scrolled ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-2">
-            <User className="h-8 w-8 text-blue-400" />
-            <span className="text-xl font-bold text-white">Rikas Mohammed N</span>
+        <div className="flex items-center justify-between h-20">
+          <div 
+            onClick={() => scrollToSection('#home')}
+            className="flex items-center space-x-3 cursor-pointer group"
+          >
+            <span className="text-xl font-bold text-white tracking-wider">Rikas Mohammed N</span>
           </div>
           
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-baseline space-x-4">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-slate-300 hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                  className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 group ${
+                    activeSection === item.href ? 'text-white' : 'text-gray-400 hover:text-white'
+                  }`}
                 >
                   {item.label}
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out ${
+                    activeSection === item.href ? 'scale-x-100' : ''
+                  }`}></span>
                 </button>
               ))}
             </div>
@@ -58,29 +78,31 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-400 hover:text-white"
+              className="text-gray-400 hover:text-white focus:outline-none"
             >
+              <span className="sr-only">Open main menu</span>
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
       </div>
 
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-900/95 backdrop-blur-md border-b border-slate-800">
-            {navItems.map((item) => (
-              <button
-                key={item.href}
-                onClick={() => scrollToSection(item.href)}
-                className="text-slate-300 hover:text-blue-400 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200"
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
+      {/* Mobile Menu */}
+      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} transition-all duration-300 ease-in-out`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-900/95 backdrop-blur-md">
+          {navItems.map((item) => (
+            <button
+              key={item.href}
+              onClick={() => scrollToSection(item.href)}
+              className={`block w-full text-left px-3 py-3 text-base font-medium rounded-md transition-colors duration-200 ${
+                activeSection === item.href ? 'bg-blue-500/20 text-white' : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 };

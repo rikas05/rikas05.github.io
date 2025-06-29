@@ -1,23 +1,26 @@
-import React from 'react';
+import { Code, Database, Brain, ChevronsRight } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
     {
       title: 'AI/ML Frameworks',
-      skills: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Numpy', 'Panda', 'seaborn']
+      icon: Brain,
+      skills: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Numpy', 'Pandas', 'Seaborn']
     },
     {
       title: 'Web Development',
-      skills: ['Node js', 'React js', 'HTML', 'CSS', 'Javascript']
+      icon: Code,
+      skills: ['Node.js', 'React.js', 'HTML5', 'CSS3', 'JavaScript', 'Tailwind CSS']
     },
     {
-      title: 'Programming Languages',
-      skills: ['Python', 'C', 'Java', 'React js', 'SQL', 'Node js']
+      title: 'Programming & Databases',
+      icon: Database,
+      skills: ['Python', 'C', 'Java', 'SQL', 'MongoDB', 'Supabase']
     },
   ];
 
   const specializations = [
-    'Predcitive Modeling',
+    'Predictive Modeling',
     'Data Preprocessing & Feature Engineering',
     'Deep Learning',
     'Supervised Learning Algorithms',
@@ -26,26 +29,34 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-24 bg-gray-900 relative overflow-hidden">
+      <div className="absolute top-1/4 left-0 w-72 h-72 bg-blue-500/10 rounded-full filter blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-1/4 right-0 w-72 h-72 bg-cyan-500/10 rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Skills & Expertise</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto mb-8"></div>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            A comprehensive toolkit of modern AI/ML technologies and frameworks
-          </p>
+          <h2 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl mb-4">
+            Skills & Expertise
+          </h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          {skillCategories.map((category, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          {skillCategories.map((category) => (
             <div
-              key={index}
-              className="bg-slate-800/50 p-8 rounded-xl border border-slate-700 hover:border-blue-500/30 transition-all duration-300"
+              key={category.title}
+              className="bg-gray-800/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/60 group transition-all duration-300 hover:border-cyan-400/50 hover:bg-gray-800/60"
             >
-              <h3 className="text-xl font-semibold text-white mb-6">{category.title}</h3>
-              <ul className="list-disc list-inside space-y-2 text-slate-300">
-                {category.skills.map((skill, skillIndex) => (
-                  <li key={skillIndex}>{skill}</li>
+              <div className="flex items-center gap-4 mb-4">
+                <category.icon className="h-10 w-10 text-cyan-400" />
+                <h3 className="text-2xl font-bold text-white">{category.title}</h3>
+              </div>
+              <ul className="space-y-3 mt-6">
+                {category.skills.map((skill) => (
+                  <li key={skill} className="flex items-center text-gray-300">
+                    <ChevronsRight className="h-5 w-5 text-blue-400 mr-2 flex-shrink-0" />
+                    <span>{skill}</span>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -53,12 +64,14 @@ const Skills = () => {
         </div>
 
         <div className="text-center">
-          <h3 className="text-2xl font-semibold text-white mb-8">AI/ML Specializations</h3>
+          <h3 className="text-3xl font-bold text-white mb-8">
+            AI/ML Specializations
+          </h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {specializations.map((spec, index) => (
+            {specializations.map((spec) => (
               <span
-                key={index}
-                className="px-6 py-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 rounded-full text-blue-300 font-medium hover:from-blue-500/30 hover:to-cyan-500/30 transition-all duration-300 hover:scale-105 cursor-default"
+                key={spec}
+                className="px-6 py-3 bg-gray-800/50 border border-transparent rounded-full text-blue-300 font-medium hover:bg-blue-500/20 hover:border-blue-400/50 transition-all duration-300 cursor-default"
               >
                 {spec}
               </span>
