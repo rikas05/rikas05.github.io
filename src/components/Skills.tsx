@@ -5,7 +5,7 @@ const Skills = () => {
     {
       title: 'AI/ML Frameworks',
       icon: Brain,
-      skills: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Numpy', 'Pandas', 'Seaborn']
+      skills: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Numpy', 'Pandas', 'Seaborn', 'Matplotlib', 'NLP', 'Transformer']
     },
     {
       title: 'Web Development',
