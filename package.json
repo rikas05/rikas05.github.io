@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://rikas05.github.io/portfolio",
+  "homepage": "https://rikas05.github.io/rikas05.github.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
