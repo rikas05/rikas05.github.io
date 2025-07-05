@@ -59,11 +59,9 @@ const Hero = () => {
           <div className="relative flex justify-center lg:justify-end">
             <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-gradient-to-br from-blue-500/20 to-cyan-500/20 p-2 backdrop-blur-sm border border-cyan-500/20">
               <div className="w-full h-full rounded-full overflow-hidden bg-gray-800">
-                {/* 
-                  TODO: Add your image here. 
-                  Place your image in the `public` folder and update the src path.
-                  Example: <img src="/your-image.png" alt="Rikas Mohammed N" className="w-full h-full object-cover" />
-                */}
+                {
+                  <img src="assets\WhatsApp Image 2025-07-05 at 22.29.17_fad06ccc.jpg" alt="Rikas Mohammed N" className="w-full h-full object-cover" />
+                }
                 <div className="w-full h-full bg-gray-700 flex items-center justify-center">
                   <span className="text-gray-500">Your Image Here</span>
                 </div>
