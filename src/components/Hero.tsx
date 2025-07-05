@@ -29,7 +29,7 @@ const Hero = () => {
               AI/ML Specialist & Developer
             </h2>
             <p className="text-lg text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8">
-              I build intelligent systems and scalable applications with a passion for machine learning and impactful technology.
+              I build intelligent solutions with Python, NLP, and a passion for applied machine learning and deep learning.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
