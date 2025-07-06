@@ -1,4 +1,5 @@
 import { ChevronDown, Github, Linkedin, Mail, Download } from 'lucide-react';
+import rikasImage from "../../assets/Rikas_image.jpg";
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -60,7 +61,7 @@ const Hero = () => {
             <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-gradient-to-br from-blue-500/20 to-cyan-500/20 p-2 backdrop-blur-sm border border-cyan-500/20">
               <div className="w-full h-full rounded-full overflow-hidden bg-gray-800">
                 {
-                  <img src="assets\Rikas_image.jpg" alt="Rikas Mohammed N" className="w-full h-full object-cover" />
+                  <img src={rikasImage} />
                 }
                 <div className="w-full h-full bg-gray-700 flex items-center justify-center">
                   <span className="text-gray-500">Your Image Here</span>
