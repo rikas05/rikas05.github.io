@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "cp public/CNAME dist/"
+    "postbuild": "cp public/CNAME dist/",
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
