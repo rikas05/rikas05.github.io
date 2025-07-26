@@ -31,19 +31,19 @@ const About = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl mb-4">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-4">
             About Me
           </h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12 items-center">
           {/* Left Text Column */}
-          <div className="lg:col-span-3">
-            <h3 className="text-3xl font-bold text-white mb-6">
+          <div className="lg:col-span-3 text-center lg:text-left">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6">
               Building the Future, One Line of Code at a Time
             </h3>
-            <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
+            <div className="space-y-6 text-base sm:text-lg text-gray-300 leading-relaxed">
               <p>
                 As a Computer Science graduate with a fervent passion for Artificial Intelligence 
                 and Machine Learning, I thrive on leveraging cutting-edge technology to solve 
@@ -71,7 +71,7 @@ const About = () => {
                     <item.icon className="h-8 w-8 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-white">{item.title}</h4>
+                    <h4 className="text-lg sm:text-xl font-semibold text-white">{item.title}</h4>
                     <p className="text-gray-400 text-sm">{item.description}</p>
                   </div>
                 </div>
