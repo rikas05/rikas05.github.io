@@ -15,8 +15,8 @@ const Hero = () => {
       {/* Animated background */}
       <div className="absolute inset-0 bg-gray-900">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800/20 to-transparent"></div>
-        <div className="absolute bottom-0 left-1/4 w-1/2 h-1/2 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent_60%)] animate-pulse"></div>
-        <div className="absolute top-0 right-1/4 w-1/3 h-1/3 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.1),transparent_70%)] animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-0 left-1/4 w-1/2 h-1/2 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent_60%)] md:animate-pulse"></div>
+        <div className="absolute top-0 right-1/4 w-1/3 h-1/3 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.1),transparent_70%)] md:animate-pulse" style={{animationDelay: '2s'}}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -58,7 +58,7 @@ const Hero = () => {
           
           {/* Right Content - Image */}
           <div className="relative flex justify-center lg:justify-end">
-            <div className="w-56 h-56 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-gradient-to-br from-blue-500/20 to-cyan-500/20 p-2 backdrop-blur-sm border border-cyan-500/20">
+            <div className="w-56 h-56 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-gradient-to-br from-blue-500/20 to-cyan-500/20 p-2 md:backdrop-blur-sm border border-cyan-500/20">
               <div className="w-full h-full rounded-full overflow-hidden bg-gray-800">
                 {
                   <img src={rikasImage} className="w-full h-full object-cover" alt="Rikas Mohammed N" />
@@ -68,15 +68,15 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-            <div className="absolute -bottom-6 sm:-bottom-8 -left-6 sm:-left-8 w-20 sm:w-32 h-20 sm:h-32 bg-blue-500/10 rounded-full filter blur-2xl"></div>
-            <div className="absolute -top-6 sm:-top-8 -right-6 sm:-right-8 w-20 sm:w-32 h-20 sm:h-32 bg-cyan-500/10 rounded-full filter blur-2xl"></div>
+            <div className="absolute -bottom-6 sm:-bottom-8 -left-6 sm:-left-8 w-20 sm:w-32 h-20 sm:h-32 bg-blue-500/10 rounded-full md:filter md:blur-2xl"></div>
+            <div className="absolute -top-6 sm:-top-8 -right-6 sm:-right-8 w-20 sm:w-32 h-20 sm:h-32 bg-cyan-500/10 rounded-full md:filter md:blur-2xl"></div>
           </div>
         </div>
       </div>
 
       <button
         onClick={scrollToAbout}
-        className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce text-gray-500 hover:text-white transition-colors duration-300"
+        className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-20 md:animate-bounce text-gray-500 hover:text-white transition-colors duration-300"
       >
         <ChevronDown className="h-8 w-8 sm:h-10 sm:w-10" />
       </button>

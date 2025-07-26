@@ -30,8 +30,8 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-24 bg-gray-900 relative overflow-hidden">
-      <div className="absolute top-1/4 left-0 w-72 h-72 bg-blue-500/10 rounded-full filter blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-1/4 right-0 w-72 h-72 bg-cyan-500/10 rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+      <div className="absolute top-1/4 left-0 w-72 h-72 bg-blue-500/10 rounded-full md:filter md:blur-3xl md:animate-pulse"></div>
+      <div className="absolute bottom-1/4 right-0 w-72 h-72 bg-cyan-500/10 rounded-full md:filter md:blur-3xl md:animate-pulse" style={{animationDelay: '2s'}}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
@@ -45,7 +45,7 @@ const Skills = () => {
           {skillCategories.map((category) => (
             <div
               key={category.title}
-              className="bg-gray-800/40 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-gray-700/60 group transition-all duration-300 hover:border-cyan-400/50 hover:bg-gray-800/60"
+              className="bg-gray-800/40 md:backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-gray-700/60 group transition-all duration-300 hover:border-cyan-400/50 hover:bg-gray-800/60"
             >
               <div className="flex items-center gap-4 mb-4">
                 <category.icon className="h-8 w-8 md:h-10 md:w-10 text-cyan-400" />

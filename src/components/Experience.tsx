@@ -39,8 +39,8 @@ const experiences = [
 const Experience = () => {
   return (
     <section id="experience" className="py-24 bg-gray-900 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-72 md:w-96 h-72 md:h-96 bg-purple-500/10 rounded-full filter blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-0 right-0 w-72 md:w-96 h-72 md:h-96 bg-blue-500/10 rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '3s'}}></div>
+      <div className="absolute top-0 left-0 w-72 md:w-96 h-72 md:h-96 bg-purple-500/10 rounded-full md:filter md:blur-3xl md:animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-72 md:w-96 h-72 md:h-96 bg-blue-500/10 rounded-full md:filter md:blur-3xl md:animate-pulse" style={{animationDelay: '3s'}}></div>
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
