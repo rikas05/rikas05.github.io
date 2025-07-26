@@ -35,10 +35,10 @@ const projectsData: Project[] = [
   },
   {
     title: 'Resume Matcher using NLP',
-    description: 'Built an AI-powered Resume Matcher that compares resumes with job descriptions using NLP techniques like Word2Vec, TF-IDF, and cosine similarity to provide match scores and skill gap analysis.',
+    description: 'Built an AI-powered Resume Matcher that compares resumes with job descriptions using NLP techniques like Sentence-BERT, TF-IDF, and cosine similarity to identify top candidates based on match relevance and percentile ranking with option to export the shortlisted candidates in a pdf format.',
     icon: NotebookText,
-    technologies: ['Python', 'Scikit-learn', 'Gensim', 'SymSpellPy','NLTK','PDFMiner'],
-    features: ['Advanced text Preprocessing', 'Semantic Analysis', 'Cosine Similarity Scoring', 'Skill Gap Analysis'],
+    technologies: ['Python', 'Sentence-BERT', 'Scikit-learn', 'Gensim', 'SymSpellPy','NLTK','PDFMiner'],
+    features: ['Advanced text Preprocessing', 'Semantic Analysis', 'Cosine Similarity Scoring', 'Percentile Ranking', 'PDF Export', 'Shortlisting Filters'],
     github: 'https://github.com/rikas05/Resume-Matcher',
     live: null,
     gradient: 'from-green-500 to-teal-500',
