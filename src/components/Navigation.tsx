@@ -16,23 +16,31 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState('#home');
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const newScrolled = window.scrollY > 50;
+          if (newScrolled !== scrolled) setScrolled(newScrolled);
 
-      const sections = navItems.map(item => document.querySelector(item.href) as HTMLElement);
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        if (section && section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
-          setActiveSection(`#${section.id}`);
-          break;
-        }
+          const sections = navItems.map(item => document.querySelector(item.href) as HTMLElement);
+          const scrollPosition = window.scrollY + 100;
+          let foundSection = activeSection;
+          for (const section of sections) {
+            if (section && section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
+              foundSection = `#${section.id}`;
+              break;
+            }
+          }
+          if (foundSection !== activeSection) setActiveSection(foundSection);
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [scrolled, activeSection]);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
