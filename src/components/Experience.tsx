@@ -56,15 +56,18 @@ const Experience = () => {
 
           <div className="space-y-12 md:space-y-16">
             {experiences.map((exp, index) => (
-              <div key={exp.title} className="relative">
-                <div className={`absolute w-10 h-10 md:w-12 md:h-12 rounded-full left-1/2 -translate-x-1/2 -top-5 md:top-1/2 md:-translate-y-1/2 flex items-center justify-center
-                  ${exp.type === 'work' ? 'bg-blue-500' : 'bg-purple-500'}`}>
+              <div key={exp.title} className="relative flex flex-col md:block items-center">
+                {/* Timeline Icon */}
+                <div className={`z-10 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-4 md:mb-0
+                  ${index % 2 === 0 ? 'md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2' : 'md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2'}
+                  ${exp.type === 'work' ? 'bg-blue-500' : 'bg-purple-500'}`}
+                >
                   {exp.type === 'work' ? <Briefcase className="w-5 h-5 md:w-6 md:h-6 text-white"/> : <GraduationCap className="w-5 h-5 md:w-6 md:h-6 text-white"/>}
                 </div>
-                
-                <div className={`w-full flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                {/* Card */}
+                <div className={`w-full flex-col md:flex ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'} items-center md:items-stretch`}> 
                   <div className="w-full md:w-5/12">
-                    <div className="bg-gray-800/40 backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-gray-700/60 transition-all duration-300 hover:border-cyan-400/50 hover:bg-gray-800/60">
+                    <div className="bg-gray-800/40 md:backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-gray-700/60 transition-all duration-300 hover:border-cyan-400/50 hover:bg-gray-800/60 mt-0 md:mt-0">
                       <div className="flex justify-between items-center mb-2">
                         <h3 className="text-lg md:text-xl font-bold text-white">{exp.title}</h3>
                         <div className="text-xs md:text-sm text-cyan-300 font-medium">{exp.period}</div>
