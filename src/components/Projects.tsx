@@ -48,8 +48,11 @@ const projectsData: Project[] = [
 const Projects = () => {
   return (
     <section id="projects" className="py-24 bg-gray-900/50 relative overflow-hidden">
-      <div className="absolute -top-16 -left-16 w-96 h-96 bg-blue-500/10 rounded-full md:filter md:blur-3xl md:animate-pulse"></div>
-      <div className="absolute -bottom-16 -right-16 w-96 h-96 bg-cyan-500/10 rounded-full md:filter md:blur-3xl md:animate-pulse" style={{animationDelay: '3s'}}></div>
+      {/* Background blobs only on md and up */}
+      <div className="hidden md:block">
+        <div className="absolute -top-16 -left-16 w-96 h-96 bg-blue-500/10 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-16 -right-16 w-96 h-96 bg-cyan-500/10 rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '3s'}}></div>
+      </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
