@@ -26,8 +26,8 @@ const About = () => {
 
   return (
     <section id="about" className="py-24 bg-gray-900/50 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-64 h-64 bg-cyan-500/10 rounded-full filter blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full filter blur-3xl"></div>
+      <div className="absolute top-0 left-0 w-64 h-64 bg-cyan-500/10 rounded-full md:filter md:blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full md:filter md:blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
@@ -64,7 +64,7 @@ const About = () => {
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="bg-gray-800/40 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/60 transition-all duration-300 hover:border-cyan-400/50 hover:bg-gray-800/60 hover:scale-105"
+                className="bg-gray-800/40 md:backdrop-blur-sm p-6 rounded-2xl border border-gray-700/60 transition-all duration-300 hover:border-cyan-400/50 hover:bg-gray-800/60 hover:scale-105"
               >
                 <div className="flex items-center gap-4">
                   <div className="p-3 bg-gradient-to-br from-blue-500/50 to-cyan-500/50 rounded-lg">
