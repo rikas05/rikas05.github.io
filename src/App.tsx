@@ -8,6 +8,7 @@ import Experience from './components/Experience';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Chatbot from './components/Chatbot';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <Chatbot />
     </div>
   );
 }
